@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="count">
+
+	<select id="selectOneLike" resultType="int" parameterType="int">
+		select COUNT(*)
+		from counts
+		where type = 'L'
+		and user_no = #{no}
+	</select>
+	
+	<insert id="insertLike" parameterType="Count">
+		insert into counts(no ,
+		user_no , article_no , type , regdate)
+		values(counts_seq.nextval
+		,#{userNo},#{articleNo},'L',systimestamp)
+	</insert>
+
+	<delete id="deleteLike" parameterType="int">
+		delete counts
+		where type='L'
+		and user_no = #{no}
+	</delete>
+	
+	<select id="selectLikeCount" parameterType="int" resultType="int">
+		select
+		count(*)
+		from counts
+		where type
+		= 'L'
+		and article_no = #{no}
+	</select>
+	
+	<select id="selectView" parameterType="Count" resultType="int">
+		select
+		count(*)
+		from counts
+		where type
+		= 'V'
+		and article_no = #{articleNo}
+		and user_no = #{userNo}
+	</select>
+	
+	<insert id="insertView" parameterType="Count">
+	insert into counts(no ,
+	user_no , article_no , type , regdate)
+	values(counts_seq.nextval
+	,#{userNo},#{articleNo},'V',systimestamp)
+	</insert>
+	
+	
+	<select id="selectViewNum" parameterType="int" resultType="int">
+		select
+		count(*)
+		from counts
+		where type
+		= 'V'
+		and article_no = #{articleNo}
+	</select>
+</mapper>
+

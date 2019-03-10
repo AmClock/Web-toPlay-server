@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+
+	<!-- AspectJ 자동 프록시 -->
+	<aop:aspectj-autoproxy />
+
+	<!-- 트랜잭션을 어노테이션으로 설정 -->
+	<tx:annotation-driven />
+
+	<jee:jndi-lookup id="dataSource"
+		jndi-name="java:comp/env/oraclexe" />
+
+	<!-- 트랜잭션 매니저 설정 -->
+	<bean id="transactionManager" p:dataSource-ref="dataSource"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager" />
+
+	<bean id="sqlSessionFactory" p:dataSource-ref="dataSource"
+		p:configLocation="WEB-INF/mybatis-config.xml"
+		class="org.mybatis.spring.SqlSessionFactoryBean" />
+
+	<bean id="sqlSession" c:sqlSessionFactory-ref="sqlSessionFactory"
+		class="org.mybatis.spring.SqlSessionTemplate" />
+
+	<!-- util 설정 -->
+	<bean id="resizeImageUtil" class="util.ResizeImageUtil" />
+	<bean id="fileRenameUtil" class="util.FileRenameUtil" />
+	<bean id="paginateUtil" class="util.PaginateUtil" />
+
+	<!-- dao 설정 -->
+	<bean id="userDAO" p:session-ref="sqlSession"
+		class="dao.UserDAOImpl" />
+	<bean id="articleDAO" p:session-ref="sqlSession"
+		class="dao.ArticleDAOImpl" />
+	<bean id="contentDAO" p:session-ref="sqlSession"
+		class="dao.ContentDAOImpl" />
+	<bean id="countDAO" p:session-ref="sqlSession"
+		class="dao.CountDAOImpl" />
+	<bean id="repliesDAO" p:session-ref="sqlSession"
+		class="dao.RepliesDAOImpl" />
+	<!-- service 설정 -->
+	<bean id="userService" p:userDAO-ref="userDAO"
+		class="service.UserServiceImpl" />
+	<bean id="articleService"
+		p:paginateUtil-ref="paginateUtil"
+		p:repliesDAO-ref="repliesDAO"
+		p:countDAO-ref="countDAO" p:articleDAO-ref="articleDAO"
+		p:contentDAO-ref="contentDAO" class="service.ArticleServiceImpl" />
+
+</beans>

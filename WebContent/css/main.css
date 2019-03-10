@@ -1,0 +1,271 @@
+@charset "UTF-8";
+
+#mainBtnWrap {
+	width: 1200px;
+	height: 80px;
+	margin-top: 5px;
+	text-align: center;
+}
+
+#writeBtnWrap {
+	width: 1198px;
+	height: 50px;
+	text-align: end;
+}
+
+#writeBtnWrap button {
+	margin-top: 8px;
+	margin-right: 10px;
+	width: 144px;
+	height: 34px;
+	background-color: #f8a5c2;
+	cursor: pointer;
+	font-size: 15px;
+	font-weight: bold;
+	color: #fff;
+	border: 3px solid #f78fb3;
+	border-radius: 5px;
+	outline: none;
+	transition: 1s ease;
+}
+
+#writeBtnWrap button:hover {
+	border: 3px solid #a35e76;
+}
+
+.btn_my {
+	margin-top: 20px;
+	width: 144px;
+	height: 34px;
+	text-align: center;
+	line-height: 34px;
+	font-size: 15px;
+	background-color: #95a5a6;
+	color: #fff;
+	display: inline-block;
+	margin-right: 10px;
+	margin-left: 10px;
+	cursor: pointer;
+	border-radius: 5px;
+	border: 3px solid #7f8c8d;
+	transition: 1s ease;
+}
+
+.btn_my_on {
+	border: 3px solid #1e2d3a;
+	background-color: #1e2d3a;
+}
+
+.btn_my:hover {
+	border: 3px solid #1e2d3a;
+}
+
+/*#mainContents{
+    width: 1200px;
+}*/
+#mainContents li {
+	display: inline-block;
+}
+
+#mainContents li:hover a {
+	transform: scale(1.2);
+	border: 1px solid transparent;
+	box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+	position: relative;
+	z-index: 111;
+}
+
+#mainContents li a {
+	width: 283px;
+	height: 198px;
+	display: inline-block;
+	text-decoration: none;
+	color: #000;
+	margin: 5px 5px 5px 5px;
+	transition: .5s ease;
+	transform: scale(1);
+	background-color: #fff;
+	border: 1px solid silver;
+}
+
+.box_img {
+	width: 283px;
+	height: 138px;
+}
+
+.box_img img {
+	width: 283px;
+	height: 138px;
+}
+
+.box_card_text {
+	width: 283px;
+	height: 20px;
+}
+
+#titleBox {
+	text-indent: 10px;
+}
+
+#nicknameBox {
+	width: 280px;
+	padding-right: 5px;
+	text-align: end;
+}
+
+.icon_content {
+	font-size: 12px;
+}
+
+.box_card_text span:first-child {
+	margin-left: 5px;
+}
+
+.regdate_box {
+	margin-left: 10px;
+}
+
+#customSelect div#selectingBox {
+	width: 120px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+}
+
+.over_flow {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+#paing {
+	width: 1200px;
+	height: 50px;
+}
+
+#searchWrap {
+	width: 1200px;
+	height: 40px;
+	position: relative;
+	margin-top: 10px;
+}
+
+#searchBox {
+	margin: auto;
+	width: 994px;
+	height: 34px;
+	border: 3px solid #FF6F61;
+	background-color: #ee5253;
+	border-radius: 5px;
+}
+
+#searchBox input {
+	width: 940px;
+	height: 30px;
+	outline: none;
+	border: none;
+	font-size: 18px;
+	text-indent: 5px;
+	margin-top: 1px;
+	margin-left: 10px;
+	color: #fff;
+	font-weight: bold;
+	background-color: #ee5253;
+}
+
+#searchIcon {
+	width: 30px;
+	height: 30px;
+	background-color: #FF6F61;
+	float: right;
+	text-align: center;
+	line-height: 30px;
+	font-size: 25px;
+	cursor: pointer;
+	color: #fff;
+	border: 3px solid #FF6F61;
+	text-shadow: 1px 1px #424242;
+}
+
+#searchOtherWrap {
+	width: 958px;
+	background-color: #ee5253;
+	position: absolute;
+	top: 36.5px;
+	left: 103px;
+	z-index: 10;
+	display: none;
+	border-radius: 0px 0px 5px 5px;
+}
+
+.box_other {
+	width: 959px;
+	height: 30px;
+	text-indent: 15px;
+	color: #fff;
+	font-weight: bold;
+	line-height: 30px;
+	cursor: pointer;
+}
+
+.box_other:last-child {
+	border-radius: 0px 0px 5px 5px;
+}
+
+.box_other:hover {
+	background-color: #b03d3e;
+}
+
+#selectWrap {
+	width: 1198px;
+	height: 40px;
+	position: relative;
+}
+
+#selectBox {
+	width: 128px;
+	height: 28px;
+	background-color: #fff;
+	line-height: 26px;
+	text-indent: 25px;
+	color: #919191;
+	font-size: 15px;
+	position: absolute;
+	top: 5px;
+	right: 10px;
+	border: 1px solid #919191;
+}
+
+#selectBox i {
+	display: block;
+	float: right;
+	width: 26px;
+	height: 26px;
+	font-size: 20px;
+	line-height: 20px;
+	text-indent: 0px;
+	text-align: center;
+	cursor: pointer;
+}
+
+#optionBox {
+	display: none;
+	position: absolute;
+	top: 35px;
+	right: 10px;
+	width: 130px;
+	height: 60px;
+}
+
+#optionBox div {
+	width: 128px;
+	height: 28px;
+	text-align: center;
+	line-height: 30px;
+	border: 1px solid #919191;
+	border-top: none;
+	color: #919191;
+	cursor: pointer;
+	font-size: 15px;
+}

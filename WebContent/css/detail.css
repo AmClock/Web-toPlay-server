@@ -1,0 +1,348 @@
+@charset "UTF-8";
+
+div#wrap {
+    border: none;
+    width: 1200px;
+    background-color: #F2F4F7;
+  /*  background-color: #f00;*/
+}
+
+#titleWrap{
+    width: 1198px;
+    height: 78px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid silver;
+    background-color: #ffff;
+}
+
+#regdateBox{
+    width: 1179px;
+    height: 20px;
+    text-align: end;
+    color: #aeaeae;
+    padding-right: 20px;
+    margin: auto;
+}
+div#regdateBox span:first-child{
+    font-size: 13px;
+}
+div#regdateBox span:last-child{
+    font-size: 10px;
+}
+#regdateBox span{
+    margin-right:15px;
+}
+
+#titleBox{
+    width: 1000px;
+    height: 60px;
+    margin: auto;
+    text-align: center;
+    line-height: 60px;
+    font-size: 40px;
+}
+#profileWrap{
+    width: 1198px;
+    height: 53px;
+    background-color: #fff;
+    margin-top: 10px;
+    border: 1px solid silver;
+}
+#userProfileBox{
+    width: 498px;
+    height: 53px;
+    float: left;
+}
+#userProfileBox img,#nicknameBox{
+    float: left;
+    margin-top: 2px;
+}
+#userProfileBox img{
+    width: 48px;
+    height: 48px;
+    border-radius: 50px;
+    margin-left: 100px;
+    border: 1px solid silver;
+}
+#nicknameBox{
+    width: 200px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    margin-top: 12px;
+    margin-left: 10px;
+}
+
+.wrap_content {
+    width: 1200px;
+    height: 400px;
+    margin-top: 10px;
+}
+.box_content{
+    width: 998px;
+    height: 398px;
+    border: 1px solid silver;
+    background-color: #fff;
+    margin: auto;
+}
+.box_img{
+    width: 398px;
+    height: 398px;
+    float: left;
+}
+.box_img img{
+    width: 398px;
+    height: 398px;
+}
+.wrap_text{
+    width: 558px;
+    height: 358px;
+    padding: 20px 20px ;
+    word-break: break-word;
+    line-height: initial;
+    float: right;
+}
+#contentWrap{
+}
+#wrapBtn{
+    width: 1200px;
+    height: 40px;
+    margin-top: 10px;
+    position: relative;
+}
+
+#wrapBtn button{
+    width: 144px;
+    height: 34px;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    background-color: #f8a5c2;
+    border: 3px solid #f78fb3;
+    position: absolute;
+    cursor: pointer;
+    top: 3px;
+    transition: 1s ease;
+    outline: none;
+}
+#wrapBtn button:hover {
+    border: 3px solid #a35e76;
+}
+#wrapBtn a button{
+    right: 5px;
+}
+
+#wrapBtn form button{
+    right: 159px;
+}
+#wrap div#likeBtnWrap{
+    width: 1198px;
+    height: 48px;
+    margin-top: 10px;
+    text-align: center;
+    background-color: #ffffff;
+    border: 1px solid silver;
+}
+
+#likeBtnWrap button{
+    width: 48px;
+    height: 48px;
+    border-radius: 5px;
+    background-color: #ecf0f1;
+    border: 3px solid #bdc3c7;
+    font-size: 20px;
+    cursor: pointer;
+    outline: none;
+    display: inline-block;
+}
+#likeBtnWrap button.on_like{
+	background-color: #bdc3c7;
+}
+#likeNumBox{
+    display: inline-block;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    font-size: 20px;
+}
+#replyWrap{
+    width: 1200px;
+    height: 250px;
+    margin-top: 10px;
+}
+.box_reply{
+    width: 1200px;
+    height: 150px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.box_reply_content{
+    width: 798px;
+    height: 148px;
+    background-color: #fff;
+    border: 1px solid silver;
+    margin: auto;
+}
+.box_write_user{
+    width: 100px;
+    height: 55px;
+}
+#writeUserBox{
+    width: 200px;
+    height: 100px;
+    margin-top: 25px;
+    text-align: center;
+    float: left;
+}
+
+#writeImg{
+    width: 48px;
+    height: 48px;
+    border-radius: 50px;
+    border: 1px solid silver;
+}
+#writeNameBox{
+    width: 200px;
+    height:50px;
+    margin:auto;
+    text-align: center;
+    line-height: 50px;
+}
+
+.box_reply_content textarea{
+    width: 496px;
+    height: 138px;
+    border: 1px solid silver;
+    margin-top: 2px;
+    margin-left: 10px;
+    float: left;
+    resize: none;
+    outline: none;
+}
+#writeBtnWrap{
+    width: 50px;
+    height: 150px;
+    text-align: center;
+    line-height: 150px;
+    margin-right: 10px;
+    float: right;
+}
+#writeBtnWrap button{
+    width: 50px;
+    height: 50px;
+    background-color: #1abc9c;
+    border: 3px solid #16a085;
+    font-size: 30px;
+    color: #ffff;
+    cursor: pointer;
+    border-radius:5px;
+    outline: none;
+}
+#countNumBox{
+    width: 1198px;
+    height: 38px;
+    border: 1px solid silver;
+    background-color: #fff;
+    margin-top: 5px;
+}
+#numWrap{
+    width: 158px;
+    height: 38px;
+}
+#numBox , #numText{
+    line-height: 40px;
+}
+#numBox{
+    width: 40px;
+    height: 38px;
+    float: left;
+    text-align: center;
+}
+#numText{
+    width: 118px;
+    height: 38px;
+    text-align: start;
+    text-indent: 5px;
+    float: left;
+}
+/**/
+#replyBox{
+    width: 1200px;
+    margin-top: 5px;
+}
+
+#paging{
+   width: 1200px;
+}
+.wrap_reply_list{
+    width: 1200px;
+    height: 170px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.box_reply_list{
+    width: 798px;
+    height: 168px;
+    margin: auto;
+    background: #fff;
+    border: 1px solid silver;
+}
+.wrap_read_user{
+    width: 200px;
+    height: 100px;
+    text-align: center;
+    float: left;
+    margin-top: 35px;
+}
+.wrap_read_user img{
+    width: 48px;
+    height: 48px;
+    border-radius: 50px;
+    border: 1px solid silver;
+}
+.box_nickname{
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+}
+.reply_content{
+    width: 478px;
+    height: 148px;
+    float: left;
+    line-height: initial;
+    word-break: break-word;
+    padding: 10px 10px;
+}
+.wrap_btn_reply{
+    width: 100px;
+    height: 170px;
+    float: right;
+    text-align: center;
+}
+.wrap_btn_reply button{
+    width: 50px;
+    height: 50px;
+    border: 3px solid #f39c12;
+    border-radius: 5px;
+    background-color: #f1c40f;
+    color: #ffff;
+    font-size: 30px;
+    margin-top: 25px;
+    cursor: pointer;
+}
+.wrap_reply_list textarea{
+	width: 478px;
+    height: 148px;
+	resize: none;	
+	margin-top:7px;
+	float: left;
+	display: none;
+}
+button.real_update{
+	background-color: #1abc9c;
+    border: 3px solid #16a085;
+    display: none;
+    margin-left: 25px;
+}

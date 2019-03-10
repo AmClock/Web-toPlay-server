@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="replies">
+	<insert id="insertReply" parameterType="Reply">
+		insert into replies (no ,
+		content , user_no , article_no, regdate)
+		values(replies_seq.nextval ,
+		#{content} , #{userNo} , #{articleNo} , systimestamp)
+	</insert>
+
+	<select id="selectList" parameterType="PageVO" resultType="Reply">
+		select no , content , articleNo , userNo , userName , userProfile , regdate
+		from(
+		select no , content , articleNo , userNo , userName , userProfile , regdate
+		, rownum r
+		from(
+		select r.no , r.content , r.article_no articleNo ,u.no userNo , u.name
+		userName , u.profile userProfile ,r.regdate
+		from replies r, users u
+		where u.no = r.user_no
+		and r.article_no = #{articleNo}
+		order by r.regdate desc
+		)
+		)
+		where r between #{start} and #{end}
+	</select>
+	
+	<select id="selectTotal" parameterType="int" resultType="int">
+		select COUNT(*)
+		from replies r, users u
+		where u.no = r.user_no
+		and r.article_no = #{articleNo}
+	</select>
+	
+	<delete id="deleteReply" parameterType="int">
+	DELETE replies
+	WHERE no = #{no}
+	</delete>
+	
+	<update id="updateReply" parameterType="Reply">
+		update replies
+		set content = #{content}
+		WHERE no = #{no}
+	</update>
+	
+</mapper>
+

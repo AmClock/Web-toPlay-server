@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="article">
+
+	<insert id="insertArticle" parameterType="Article">
+		<selectKey order="BEFORE" keyProperty="articleNo"
+			resultType="int">
+			select article_seq.nextval
+			from dual
+		</selectKey>
+		insert into article(no,title,user_no,views,regdate)
+		values(#{articleNo} ,#{title},#{userNo},0,systimestamp)
+	</insert>
+
+	<select id="seletOne" parameterType="int" resultType="Article">
+		select a.no
+		, a.title , a.views , a.regdate , u.no userNo , u.name userName
+		,
+		u.profile userProfile
+		from article a, users u
+		where a.user_no = u.no
+		and
+		a.no = #{no}
+	</select>
+
+
+	<delete id="deletOne" parameterType="int">
+		DELETE article
+		WHERE no =
+		#{no}
+	</delete>
+
+	<update id="updateArticle" parameterType="Article">
+		UPDATE article
+		SET title
+		= #{title}
+		WHERE no = #{articleNo}
+	</update>
+
+	<select id="selectList" parameterType="PageVO"
+		resultType="Article">
+		select no , title , userName , img , likes , reply , views
+		, regdate , userNo
+		from
+		(
+		select no , title , userName , img , likes , reply ,
+		views , regdate , rownum r , userNo
+		from
+		(
+		select a.no , a.title , a.regdate ,
+		u.name userName, v.views ,l.likes , c.img ,
+		r.reply , u.no userNo
+		from article a,
+		users u ,
+		(
+		select article_no , COUNT(*) views
+		from counts
+		where type= 'V'
+		GROUP BY article_no
+		) v,
+		(
+		select article_no , COUNT(*) likes
+		from counts
+		where type= 'L'
+		GROUP BY article_no
+		)l,
+		(
+		select img , seq , article_no
+		from contents
+		where seq = 1
+		)c ,
+		(
+		select article_no, COUNT(*) reply
+		from
+		replies
+		GROUP by article_no
+		)r
+		where u.no = a.user_no
+		and a.no =
+		v.article_no(+)
+		and a.no = l.article_no(+)
+		and c.article_no(+) = a.no
+		and r.article_no(+) = a.no
+		<if test="articleNo!=0">
+		and a.no = #{articleNo}
+		</if>
+		<if test="userNo!=0">
+		and u.no = #{userNo}
+		</if>
+		order by ${order}
+		))
+		where r between
+		#{start} and #{end}
+	</select>
+
+
+	<select id="selectTitle" parameterType="String" resultType="Article">
+		SELECT no ,title
+		FROM article
+		WHERE title LIKE #{title}
+	</select>
+	
+	
+	
+</mapper>
+

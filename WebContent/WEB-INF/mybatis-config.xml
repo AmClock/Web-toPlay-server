@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<settings>
+		<setting name="cacheEnabled" value="false" />
+		<setting name="jdbcTypeForNull" value="NULL" />
+	</settings>
+
+	<!-- 알리야스 처리하기 !! -->
+	<typeAliases>
+		<typeAlias alias="User" type="vo.User" />
+		<typeAlias alias="Article" type="vo.Article" />
+		<typeAlias alias="Content" type="vo.Content" />
+		<typeAlias alias="Count" type="vo.Count" />
+		<typeAlias alias="Reply" type="vo.Reply" />
+		<typeAlias alias="PageVO" type="vo.PageVO" />
+	</typeAliases>
+
+	<!-- 맵퍼 경로 설정 no !! ' / ' <- this -->
+	<mappers>
+		<mapper resource="mapper/users.xml" />
+		<mapper resource="mapper/article.xml" />
+		<mapper resource="mapper/content.xml" />
+		<mapper resource="mapper/count.xml" />
+		<mapper resource="mapper/replies.xml" />
+	</mappers>
+
+</configuration>

@@ -1,0 +1,146 @@
+@charset "UTF-8";
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #F2F4F7;
+}
+
+#content {
+    width: 100%;
+}
+
+#wrap {
+    width: 1200px;
+    margin: auto;
+    position: relative;
+}
+
+#loginWrap {
+    width: 600px;
+    height: 600px;
+    background-color: #fff;
+    position: absolute;
+    top: 200px;
+    left: 300px;
+
+    z-index: 1;
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#logoBox {
+    width: 600px;
+    height: 80px;
+    margin-top: 50px;
+}
+
+#logoBox img {
+    display: block;
+    margin: auto;
+    cursor: pointer;
+}
+
+#loginWrap form {
+    margin-top: 30px;
+}
+
+.wrap_input {
+    width: 544px;
+    height: 44px;
+    border-radius: 20px;
+    position: relative;
+    margin-top: 50px;
+    margin-bottom: 40px;
+    margin-left: 25px;
+    border: 3px solid #8e44ad;
+}
+
+.wrap_input input {
+    outline: none;
+    border: none;
+    width: 500px;
+    height: 30px;
+    font-size: 18px;
+    margin-top: 7px;
+    margin-left: 25px;
+}
+
+.wrap_input label {
+    text-align: start;
+    line-height: 30px;
+    font-size: 20px;
+    text-indent: 3px;
+    position: absolute;
+    top: -17px;
+    left: 10px;
+    background-color: #fff;
+    opacity: 0;
+    color: #8e44ad;
+    font-weight: bold;
+    transition-property: all;
+    transition-timing-function: ease;
+    transition-duration: 0s;
+
+}
+
+label.label_opcitiy {
+    opacity: 1;
+    transition-property: opacity;
+    transition-timing-function: linear;
+    transition-duration: .5s;
+
+}
+
+#eventWrap {
+    width: 600px;
+    height: 100px;
+}
+
+#btnBox {
+    width: 600px;
+    height: 40px;
+    position: relative;
+}
+
+#btnBox button {
+    width: 134px;
+    height: 34px;
+    background-color: #9b59b6;
+    color: #fff;
+    cursor: pointer;
+    border: 3px solid #9b59b6;
+    border-radius: 5px;
+    outline: none;
+    position: absolute;
+    right: 10px;
+}
+
+#btnBox button:hover {
+    border: 3px solid #763b90;
+}
+
+.wrap_comment {
+    width: 600px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    text-indent: 10px;
+}
+
+.wrap_comment a {
+    font-size: 17px;
+    color: silver;
+    text-decoration: none;
+}
+
+.wrap_comment span {
+    color: #9b59b6;
+}
+
+.wrap_comment a:hover {
+    color: #9b59b6;
+}
+
+#idCheck, #pwdCheck {
+    width: 200px;
+    height: 30px;
+    display: inline-block;
+}

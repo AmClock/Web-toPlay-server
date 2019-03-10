@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="content">
+	<insert id="insertContent" parameterType="Content">
+		insert into
+		contents(no,content,img,seq,article_no,regdate)
+		values(contents_seq.nextval
+		,#{content},#{img},#{seq},#{articleNo},systimestamp)
+	</insert>
+
+	<select id="selectList" resultType="Content" parameterType="int">
+		select no , content , img , seq
+		from contents
+		where article_no = #{no}
+		order by seq asc
+	</select>
+	
+	<delete id="deleteContent" parameterType="int">
+	DELETE contents
+	WHERE no = #{no}
+	</delete>
+	
+	<delete id="deleteArticleContent" parameterType="int">
+	DELETE contents
+	WHERE article_no = #{no}
+	</delete>
+	
+</mapper>
+

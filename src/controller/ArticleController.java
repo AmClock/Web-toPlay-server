@@ -106,10 +106,10 @@ public class ArticleController {
 	 * @name updateArticle \n
 	 * @brief 게시판 업데이트 함수 \n
 	 * @param referer ==> 전 페이지 URL \n
-	 * @param         seqTmp[] ==> 컨텐츠 순서 \n
-	 * @param         noTmp[] ==> 컨텐츠 번호 \n
-	 * @param         imgTmp[] ==> 이미지 이름 \n
-	 * @param         contentTmp[] ==> 컨텐츠 \n
+	 * @param seqTmp[] ==> 컨텐츠 순서 \n
+	 * @param noTmp[] ==> 컨텐츠 번호 \n
+	 * @param imgTmp[] ==> 이미지 이름 \n
+	 * @param contentTmp[] ==> 컨텐츠 \n
 	 * @return String \n
 	 * @author park
 	 * @version 1.0

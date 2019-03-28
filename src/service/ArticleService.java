@@ -8,6 +8,11 @@ import vo.Content;
 import vo.Count;
 import vo.Reply;
 
+/**
+ * @file ArticleService.java \n
+ * @brief ArticleService interface \n
+ * @author park \n
+ */
 public interface ArticleService {
 
 	public boolean writeArticle(Article article, int[] seqTmp, String[] imgTmp, String[] contentTmp);
@@ -29,8 +34,8 @@ public interface ArticleService {
 	public int deletArticle(int no);
 
 	public void updateArticle(Article article, int[] seqTmp, String[] imgTmp, String[] contentTmp, int[] noTmp);
-	
-	public Map<String , Object> mainList(int pageNo , String order , int searchNo , int userNo);
-	
+
+	public Map<String, Object> mainList(int pageNo, String order, int searchNo, int userNo);
+
 	public List<Article> searchTitle(String title);
 }

@@ -203,7 +203,7 @@ public class ArticleController {
 	 * @name ajaxLike \n
 	 * @brief 버튼을 클릭시 like 기능 처리 \n
 	 * @param clickFlag ==> 클릭유무 \n
-	 * @param count     ==> count 객체 :: insert시키위한 것 \n
+	 * @param count ==> count 객체 :: insert시키위한 것 \n
 	 * @return Map \n
 	 * @author park \n
 	 * @version 1.0 \n
@@ -279,10 +279,10 @@ public class ArticleController {
 	/**
 	 * @name articleList \n
 	 * @brief 게시판 리스트 불러오는 함수 \n
-	 * @param        int no \n
+	 * @param int no \n
 	 * @param String order \n
-	 * @param        int searchNo \n
-	 * @param        int userNo \n
+	 * @param int searchNo \n
+	 * @param int userNo \n
 	 * @return Map \n
 	 * @author park \n
 	 * @version 1.0 \n

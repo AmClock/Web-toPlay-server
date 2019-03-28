@@ -17,6 +17,11 @@ import vo.Count;
 import vo.PageVO;
 import vo.Reply;
 
+/**
+ * @file ArticleServiceImpl.java \n
+ * @brief ArticleServiceImpl class \n
+ * @author park \n
+ */
 public class ArticleServiceImpl implements ArticleService {
 
 	private ArticleDAO articleDAO;
